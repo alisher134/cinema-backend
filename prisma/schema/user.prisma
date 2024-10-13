@@ -1,0 +1,20 @@
+model User {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  email    String @unique
+  password String
+
+  username   String @unique
+  avatarPath String @default("/uploads/default-avatar.png") @map("avatar_path")
+
+  role EnumUserRole @default(USER)
+
+  @@map("user")
+}
+
+enum EnumUserRole {
+  USER
+  ADMIN
+}

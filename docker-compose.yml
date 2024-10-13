@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres
+    restart: always
+    container_name: cinema-database
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - type: bind
+        source: ./data
+        target: /data/db
