@@ -1,4 +1,4 @@
-import { isProd } from '@/src/utils/dev.utils';
+import { isProd } from '@/src/common/utils/dev.utils';
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Response } from 'express';

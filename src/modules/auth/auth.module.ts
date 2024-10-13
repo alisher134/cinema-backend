@@ -1,5 +1,7 @@
+import { JwtStrategy } from '@/src/strategies/jwt.strategy';
 import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
+import { PaginationService } from '../pagination/pagination.service';
 import { PrismaService } from '../prisma/prisma.service';
 import { TokenModule } from '../token/token.module';
 import { TokenService } from '../token/token.service';
@@ -16,7 +18,9 @@ import { RefreshTokenService } from './refresh-token.service';
 		UserService,
 		PrismaService,
 		RefreshTokenService,
-		TokenService
+		TokenService,
+		JwtStrategy,
+		PaginationService
 	]
 })
 export class AuthModule {}
